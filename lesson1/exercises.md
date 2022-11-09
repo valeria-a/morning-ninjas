@@ -119,8 +119,7 @@ For example, if the user enters: 1000000 bytes, you should print: "967.6 kb". Fo
       list methods
       string - slicing operator
       string methods - split
-
-1. Write a code that receives 
+      in operator
 
 2. Write a code that gets a word from a user and prints out the length of the word.
 
@@ -152,6 +151,7 @@ You can assume that the maximum number of seat “batches” in any aircraft is 
    Window
 
 You can assume that row number is a maximum 2-digit number, and seat Char is always a one single char.
+
 
 
 
