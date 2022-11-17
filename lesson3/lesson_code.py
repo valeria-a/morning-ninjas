@@ -303,3 +303,7 @@ print(my_year, my_month)
 # print(f"{year} - {month}")
 
 
+cities = ['New York', 'Kyiv', 'Paris', 'London', 'Tel Aviv']
+countries = ['USA', 'Ukraine', 'France', 'UK', 'Israel']
+names = ['Moshe', 'Orly', 'David', 'Jack', 'Ofer', 'James']
+various = ['AAA', [4, 5, 7], "5", 5,  3.0, True, 2654, -4, 0]
