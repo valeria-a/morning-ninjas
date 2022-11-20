@@ -1,16 +1,46 @@
 # mutable vs immutable arguments
 
 # returning multiple values as tuple
+# def analyze_str(word: str) -> tuple[int, str, str]:
+#     return len(word), word.upper(), word.lower()
+
+
+# ret_val = analyze_str('Hello')
+# word_len, word_u, word_l = analyze_str('Hello')
+# print(word_len, word_u, word_l)
+# print(ret_val)
+# a, b = (9,0)
 
 # optional arguments (default values)
+def create_person(person_id: int, name: str, address: str, phone=None, fax=None) -> dict:
+    return {
+        "id": person_id,
+        "name": name,
+        "address": address,
+        "phone": phone,
+        "fax": fax
+    }
+
+# print(create_person(234, name="Valeria", address="Netanya", fax="098845", phone="3845387563"))
+
+# print(create_person(person_id=234, "Valeria", address="Netanya", fax="098845", phone="3845387563"))
+
+# print(create_person(person_id=234, address="Netanya", fax="098845", phone="3845387563", name="Valeria"))
 
 # *args
-# def a(*argv):
+def a(*argv):
+    print(f"type of argv: {type(argv)}, len: {len(argv)}")
+    for arg in argv:
+        print (arg)
+
+# a('Hello', 'Welcome', 'to', 'Python', 'Class')
+
+# def aa(argv:tuple):
 #     print(f"type of argv: {type(argv)}, len: {len(argv)}")
 #     for arg in argv:
 #         print (arg)
-
-# a('Hello', 'Welcome', 'to', 'Python', 'Class')
+#
+# aa(('Hello', 'Welcome', 'to', 'Python', 'Class'))
 # a()
 
 # def a1(argv):
@@ -20,20 +50,27 @@
 
 #a1(4,5)
 #
-# def b(required_param, *argv):
-#     print ("First argument :", required_param)
-#     for arg in argv:
-#         print("Next argument through *argv :", arg)
-
-# b('Hello', 'Welcome', 'to', 'Python', 'Class')
+# def b(person_id, name, *phone_numbers):
+#     print ("First argument :", person_id)
+#     print ("Second argument :", name)
+#     for arg in phone_numbers:
+#         print("Next argument through *phone_numbers :", arg)
+#
+# b(234, 'Valeria', '045-w4564', '045-srdfg', '0456456-dfg')
 
 # b()
 
-# def c(**kwargs):
-#     print(type(kwargs))
-#     print(f"kwargs num: {len(kwargs)}, kwargs: {kwargs}")
+def c(**kwargs):
+    print(type(kwargs))
+    print(kwargs['first'])
+    print(f"kwargs num: {len(kwargs)}, kwargs: {kwargs}")
 
-# c(first ='Python', mid ='Full', last='Stack')
+def cc(person_id, name, **kwargs):
+    print(person_id, name)
+    print(kwargs)
+
+c(first='Python', mid ='Full', last='Stack')
+cc(345345, 'Valeria', work_address="tel aviv", age=40)
 # c()
 # c("Pyton")
 
