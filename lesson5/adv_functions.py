@@ -68,29 +68,40 @@ def c(**kwargs):
 def cc(person_id, name, **kwargs):
     print(person_id, name)
     print(kwargs)
-
-c(first='Python', mid ='Full', last='Stack')
-cc(345345, 'Valeria', work_address="tel aviv", age=40)
+#
+# c(first='Python', mid ='Full', last='Stack')
+# cc(345345, 'Valeria', work_address="tel aviv", age=40)
 # c()
 # c("Pyton")
 
+# [3,4,1,2,6].sort(reverse=True)
 
-# def d(arg1, **kwargs):
-#     print(f"arg1: {arg1}")
-#     print(f"kwargs num: {len(kwargs)}, kwargs: {kwargs}")
 
+def d(arg1, **kwargs):
+    print(f"arg1: {arg1}")
+    print(f"kwargs num: {len(kwargs)}, kwargs: {kwargs}")
+#
 # d(5, first="Hello", second="Bye")
-# d(first="abc")
+# d(first=3)
 # d(5, 'Hello')
 
 #
 #
-# def d(*args, **kwargs):
+
+# head, *tail = (1, 2,3,4)
+#
+# def d(person_id, name, *args, **kwargs):
+#     print(person_id)
+#     print(name)
 #     print(f"args num: {len(args)}, args: {args}")
 #     print(f"kwargs num: {len(kwargs)}, kwargs: {kwargs}")
-
-# d(5, 10, first='abc', second='def')
+# #
+# d(5345, 'ziv', 'trrr', 56, first='abc', second='def')
 # d()
 # d(first='abc', 5)
 
 # **kwargs
+
+my_time = input("Insert time: ")
+hours, minutes = my_time.split(':')
+print(hours, minutes)
