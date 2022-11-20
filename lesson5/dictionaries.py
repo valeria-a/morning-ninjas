@@ -187,3 +187,51 @@ grades['Noa'].append(99)
 # grades.update(new_grades)
 # grades.update(new_grades)
 # print(grades)
+
+
+company_stocks_data = {
+    'tsla': {
+        'ticker': 'tsla',
+        'company_name': 'Tesla',
+        'employees_number': 5000,
+        'address': 'Claifornia',
+        'CEO_name': 'Elon Musk',
+        'stocks data (per date)':{
+            '14.11.2021':{
+                'open price': 1001.5,
+                'close price':1020,
+                'volume': 50000000
+            },
+            '15.11.2021':{
+                'open price': 1067.7,
+                'close price':1045.5,
+                'volume': 45000345
+            }
+        },
+    },
+
+    'apl': {
+        'ticker': 'apl',
+        'company name': 'Apple',
+        'employees number': 10000,
+        'address': 'New York',
+        'CEO name': 'Tim Cook',
+        'stocks data (per date)':{
+            '14.11.2021':{
+                'open price': 1001.5,
+                'close price':1020,
+                'volume': 50000000
+            },
+            '15.11.2021':{
+                'open price': 1067.7,
+                'close price':1045.5,
+                'volume': 45000345
+            }
+        }
+
+
+    }
+
+}
+pprint.pprint(company_stocks_data['tsla']['stocks data (per date)']['15.11.2021']['open price'])
+# print(company_stocks_data['tsla']['stocks data (per date)']['15.11.2021'])
