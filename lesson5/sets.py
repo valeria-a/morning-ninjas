@@ -18,11 +18,14 @@ names = ['Daniel', 'Ziv', 'Eyal', 'Daniel']
 
 
 lecture_days = {'Sun', 'Tue', 'Wed'}
-sport_days = {'Tue', 'Thu'}
-lecture_and_sport = lecture_days.intersection(sport_days)
-print(lecture_and_sport)
-busy_days = lecture_days.union(sport_days)
-print(busy_days)
-
-
-
+# sport_days = {'Tue', 'Thu'}
+# lecture_and_sport = lecture_days.intersection(sport_days)
+# print(lecture_and_sport)
+# busy_days = lecture_days.union(sport_days)
+# print(busy_days)
+# week_days = {'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'}
+# print(week_days.difference(busy_days))
+# # busy_days.isdisjoint()
+# valeria = {'France', 'Cambodia', 'Japan'}
+# daniel = {'Bahrein', 'Quatar', 'France'}
+# print(valeria.isdisjoint(daniel))
