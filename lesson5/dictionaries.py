@@ -231,7 +231,6 @@ company_stocks_data = {
 
 
     }
-
 }
 pprint.pprint(company_stocks_data['tsla']['stocks data (per date)']['15.11.2021']['open price'])
 # print(company_stocks_data['tsla']['stocks data (per date)']['15.11.2021'])
