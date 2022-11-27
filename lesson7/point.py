@@ -23,6 +23,12 @@ class Point2D:
         return self.x != other.x or self.y != other.y
 
     def __add__(self, other):
+        if not isinstance(other, Point2D):
+            return None
+        new_point = Point2D(self.x + other.x, self.y + other.y)
+        return new_point
+        # error, don't do it:
+        # return (self.x + other.x, self.y +other.y)
 
     # def distance_from(self, other):
     #     dx = self.__x - other.__x
@@ -47,9 +53,12 @@ if __name__ == '__main__':
     print(f"p2 != p3: {p2 != p3}")
     print(p2 == "hello")
     # print("hello" == 'world')
-    p2 + p3
+    p5 = p2 + p3
+    print(p5)
+    # p5 :Point (p2.x+p3.x, p2.y + p3.y)
 
     # s1 = input()
     # s2 = input()
     # print(s1 == s2)
     # print(s1 is s2)
+
