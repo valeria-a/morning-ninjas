@@ -62,6 +62,7 @@ class Car:
         self.km: int = 0
         self.fuel: float = 0
         self.year: int = year
+        self.maintenance = {}
 
     def __str__(self):
         print("Inside __str__")
@@ -87,7 +88,32 @@ class Car:
         self.fuel += amnt
         return True
 
+    def fill_to_full(self):
+        self.fuel = self.fuel_tank_capacity
+        # return None
 
+    def drive(self, kms_driven: int):
+        if (self.fuel_consumption / 100) * kms_driven <= self.fuel:
+            self.km += kms_driven
+            self.fuel -= (self.fuel_consumption / 100) * kms_driven
+            return True
+        else:
+            print("error")
+            return False
+
+    def add_maintenance(self, date, description):
+        m_list = self.maintenance.get(date, [])
+        m_list.append(description)
+        self.maintenance[date] = m_list
+        # self.maintenance[date] = description
+        print("maintenance added")
+
+    def display_all_maintenance(self):
+        pprint(self.maintenance)
+
+
+    def get_all_maintenance(self):
+        return self.maintenance
 
 
 
@@ -126,11 +152,21 @@ mazda_car.display_dashboard()
 
 is_success = mazda_car.fill_tank(20)
 mazda_car.display_dashboard()
-is_success = mazda_car.fill_tank(100)
+
+mazda_car.display_dashboard()
+is_success = mazda_car.fill_tank(10)
 mazda_car.display_dashboard()
 # while not is_success:
 #     is_success = mazda_car.fill_tank(20)
 
+mazda_car.add_maintenance('23.11.2022', '10000 maintenance')
+mazda_car.display_all_maintenance()
+mazda_car.add_maintenance('23.11.2022', 'new maint')
+mazda_car.display_all_maintenance()
+mazda_car.add_maintenance('24.11.2022', 'fix after crash')
+mazda_car.display_all_maintenance()
+maintenance_dict = mazda_car.get_all_maintenance()
+print(mazda_car)
 
 
 
