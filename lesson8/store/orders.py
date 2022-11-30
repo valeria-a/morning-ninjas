@@ -18,3 +18,7 @@ class Shipment:
 
 class Order:
     pass
+
+    # customer
+    # list of products
+    # get_total_price()
