@@ -1,5 +1,4 @@
 from lesson8.store.store import Store
-from lesson8.store.orders import Shipment
 
 
 if __name__ == '__main__':
@@ -11,6 +10,7 @@ if __name__ == '__main__':
     gadget_store.add_customer('123123123', 'Valeria', 'netanya', '0456456')
     gadget_store.add_customer('333333333', 'Ziv Attias', 'Yaffo', '0545555555')
 
+
     gadget_store.display_customers()
 
     # create a product
@@ -19,7 +19,10 @@ if __name__ == '__main__':
     gadget_store.add_product_to_inventory("45ghf3", "phone", "Samsumg",
                                           23, 3500, "Galaxy 22", 12)
 
-    print(Shipment.counter)
+
+    gadget_store.place_order('333333333', 'some address', {"aa34v": 2, "45ghf3": 1})
+
+    gadget_store.display_orders()
 
 
 

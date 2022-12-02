@@ -1,20 +1,5 @@
-class Customer:
-    def __init__(self, customer_id, name, address, phone, email=None):
-        self.customer_id = customer_id
-        self.name = name
-        self.address = address
-        self.phone = phone
-        self.email = email
-
-    def __str__(self):
-        return f"<Customer>\n" \
-               f"ID: {self.customer_id}" \
-               f"Name: {self.name}\n" \
-               f"Address: {self.address}\n" \
-               f"Phone: {self.phone}"
-
-    def __repr__(self):
-        return f"<Customer> {self.name}"
+from lesson8.store.customer import Customer
+from lesson8.store.orders import Order
 
 
 class Product:
@@ -59,14 +44,13 @@ class Store:
         self.store_name = store_name
 
         # id to customer
-        self.customers: dict[str: Customer] = {}
+        self.customers: dict[str, Customer] = {}
 
         # sku to product
-        self.inventory: {str: Product} = {}
+        self.inventory: dict[str, Product] = {}
 
-        # order_product
-        # orders
-        # shipments
+        # order_num to order
+        self.orders: dict[str, Order] = {}
 
     def display_customers(self):
         print(self.customers)
@@ -87,6 +71,31 @@ class Store:
         new_product = Product(sku, category, brand,
                               qty, price, model, warranty_months)
         self.inventory[sku] = new_product
+
+    def place_order(self, customer_id:str, address: str, items_dict: dict):
+
+        # check customer exists
+        if customer_id not in self.customers:
+            return False
+
+        # check inventory
+        for item_sku, qty in items_dict.items():
+            if item_sku not in self.inventory and \
+                    self.inventory[item_sku].qty - qty < 0:
+                return False
+
+        # create order (sku, qty, price)
+        order = Order(self.customers[customer_id], address)
+        self.orders[order.order_num] = order
+        for item_sku, qty in items_dict.items():
+            order.add_item_to_order(item_sku, qty, self.inventory[item_sku].price)
+
+        # update inventory
+        for item_sku, qty in items_dict.items():
+            self.inventory[item_sku].qty -= qty
+
+    def display_orders(self):
+        print(self.orders)
 
     # def add_qty(self, sku:str, qty: float):
     #     self.inventory[sku].update_qty(qty)
