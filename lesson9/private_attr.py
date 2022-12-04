@@ -41,6 +41,8 @@ class Car:
         else:
             return False
 
+    def __exit__(self, exc_type, exc_val, exc_tb):
+
 
 if __name__ == '__main__':
     car_mazda: Car = Car('Mazda', '3', 'white', 20, 60)
