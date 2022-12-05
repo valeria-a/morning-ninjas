@@ -1,4 +1,8 @@
-# import pickle
+import pickle
+
+
+
+
 # student = {
 #     'name': 'David',
 #     'city': 'Tel Aviv',
@@ -25,3 +29,4 @@
 #
 # s = Student('a', 'b', [90])
 # print(s.__dict__)
+

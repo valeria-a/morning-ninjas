@@ -39,10 +39,10 @@ class RavKav:
         pass
 
 
-# d1 = datetime.datetime.now()
-d2 = input("Insert a date dd-mm-yyyy: ")
-date2 = datetime.datetime.strptime(d2, "%d-%m-%Y")
-print(date2.date())
+# # d1 = datetime.datetime.now()
+# d2 = input("Insert a date dd-mm-yyyy: ")
+# date2 = datetime.datetime.strptime(d2, "%d-%m-%Y")
+# print(date2.date())
 
 
 
