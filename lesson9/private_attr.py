@@ -41,7 +41,6 @@ class Car:
         else:
             return False
 
-    def __exit__(self, exc_type, exc_val, exc_tb):
 
 
 if __name__ == '__main__':
@@ -54,5 +53,5 @@ if __name__ == '__main__':
     # car_mazda._Car__km = 30
     # car_mazda.km = 60
     print(car_mazda.get_color())
-    print(car_mazda._fuel_consumption)
+    # print(car_mazda._fuel_consumption)
     # print(car_mazda.__km)
