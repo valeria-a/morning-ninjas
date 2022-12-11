@@ -35,11 +35,10 @@ class Student(Person):
 
     # if no init - will inherit from the parent
     def __init__(self, first_name: str, last_name: str,
-                 address: str, email: str, bdate: datetime.date,
-                 study_year: int):
+                 address: str, email: str, bdate: datetime.date):
         super().__init__(first_name, last_name, address, email, bdate)
 
-        self.study_year = study_year
+        # self.study_year = study_year
         self.grades = []
 
     def add_grade(self, grade):
