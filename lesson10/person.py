@@ -25,13 +25,21 @@ class Person:
     def get_age(self):
         return datetime.date.today().year - self.__birth_date.year
 
+    def __str__(self):
+        return f"{self.get_full_name()}, lives at {self.get_address()}, {self.get_age()} years old"
+
 
 # Derived / child class
 class Student(Person):
 
+
     # if no init - will inherit from the parent
-    def __init__(self, first_name: str, last_name: str, address: str, email: str, bdate: datetime.date):
+    def __init__(self, first_name: str, last_name: str,
+                 address: str, email: str, bdate: datetime.date,
+                 study_year: int):
         super().__init__(first_name, last_name, address, email, bdate)
+
+        self.study_year = study_year
         self.grades = []
 
     def add_grade(self, grade):
@@ -40,24 +48,30 @@ class Student(Person):
     def get_best_grade(self):
         return max(self.grades)
 
-
-# Derived / child class
+    def __str__(self):
+        return f"Student {super().__str__()}, starts studying at {self.study_year}"
+#
+#
+# # Derived / child class
 class Lecturer(Person):
 
     # if no init - will inherit from the parent
     def __init__(self, first_name: str, last_name: str, address: str, email: str,
                  bdate: datetime.date, salary_per_hour: int):
         super().__init__(first_name, last_name, address, email, bdate)
-        self.__salary = salary_per_hour
+        # self.__salary = salary_per_hour
         self._salary = salary_per_hour
 
     def get_salary_per_hour(self):
-        return self.__salary
+        return self._salary
 
     def get_salary_per_course(self, course_hours):
-        return self.__salary * course_hours
+        return self._salary * course_hours
 
-
+    def __str__(self):
+        return f"Lecturer {super().__str__()}"
+#
+#
 class LeadLecturer(Lecturer):
 
     def __init__(self, first_name: str, last_name: str, address: str, email: str,
@@ -74,9 +88,11 @@ class LeadLecturer(Lecturer):
         return len(self.__conferences)
 
     def get_salary_per_conference(self, conference_hours):
-        return self.get_salary_per_hour() * (1+self.__conference_salary_addition_percent/100) * conference_hours
+        return self._salary * (1+self.__conference_salary_addition_percent/100) * conference_hours
         # return self._salary * (1+self.__conference_salary_addition_percent/100) * conference_hours
 
     def get_salary_per_course(self, course_hours, bonus=0):
         return super().get_salary_per_course(course_hours) + bonus
-        
+
+    def __str__(self):
+        return f"Lead {super().__str__()}"
