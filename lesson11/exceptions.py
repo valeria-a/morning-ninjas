@@ -4,10 +4,69 @@ import datetime
 # return values vs raising exceptions
 # what do we return if there is a problem?
 # birth_year is negative, age is negative?
-def get_age(birth_year: int):
+
+class NegativeYearError(Exception):
+    pass
+
+
+# class YearInFutureError(Exception):
+#      def __init__(self, msg):
+#          super().__init__(msg)
+
+# class Exception:
+#     def __init__(self, msg):
+#         self.msg = msg
+#
+#     def __str__(self):
+#         return self.msg
+
+class YearInFutureError(Exception):
+    def __init__(self, inserted_year):
+        super().__init__(f"You inserted year {inserted_year} which is in the future")
+
+
+
+# raise YearInFutureError()
+
+def get_age(birth_year: int) -> int:
+    if birth_year < 0:
+        # raise Exception("Negative year is not allowed")
+        raise NegativeYearError()
+    if birth_year > datetime.datetime.utcnow().year:
+        raise YearInFutureError(birth_year)
     return datetime.datetime.utcnow().year - birth_year
 
 
+
+try:
+    b_year = int(input("Insert your year: "))
+    age = get_age(b_year)
+    print(f"You are {age} years old")
+    print("Inside try after get_age")
+except ValueError:
+    print("You did not insert a number")
+except NegativeYearError:
+    print("Negative year")
+except Exception as e:
+    print(e)
+finally:
+    print("Inside finally")
+# except Exception as e:
+#     print(e)
+print("bye")
+
+
+try:
+    fd = open("my_file", "r")
+    content = fd.read()
+    get_age()
+
+except:
+    pass
+finally:
+    fd.close()
+
+# num = int(input("Insert num"))
 
 # exceptions you've already seen
 
