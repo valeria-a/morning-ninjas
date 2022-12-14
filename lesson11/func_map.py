@@ -1,22 +1,17 @@
 # map(func, *iterables) --> map object
-# def foo_squared(num):
-#     return num**2
+def foo_squared(num):
+    return num**2
 #
-# my_list = [1, 3, 5, 6]
+my_list = [1, 3, 5, 6]
 #
-# ret_val = map(foo_squared, my_list)
-#
-# type(ret_val)
-#
-# print(ret_val)
-#
-# # print(ret_val[0])
-#
-# for i in ret_val:
-#     print(i)
 
-# print(next(ret_val))
-# print(next(ret_val))
+ret_val = list(map(foo_squared, my_list))
+#
+print(ret_val)
+#
+
+print(list(map(str.lower, ['Apple', 'baNana', 'ANANAS'])))
+
 
 # you can also pass multiple iterators to map
 # def foo_sum(num1, num2):

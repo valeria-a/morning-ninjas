@@ -12,27 +12,47 @@
 # iter()
 # next()
 #
-# my_list = [1,2,3,4]
-# for i in list:
+my_list = [1,2,3,4]
+# for i in my_list:
 #     print(i)
-#
+
+# __iter__
+# __next__
+
 # list_iter = iter(my_list)
-# type(list_iter)
+# print(type(list_iter))
 # print(next(list_iter))
 # print(next(list_iter))
 # print(next(list_iter))
 # print(next(list_iter))
 # print(next(list_iter))
 
-# class MyNumbers:
-#     def __iter__(self):
-#         self.a = 0
-#         return self
-#
-#     def __next__(self):
-#         self.a += 1
-#         return self.a
-#
+class MyNumbers:
+
+    def __init__(self, start=0, end=10):
+        self.start_from = start
+        self.end = end
+
+    def __iter__(self):
+        self.counter = self.start_from
+        return self
+
+    def __next__(self):
+        if self.counter > self.end:
+            raise StopIteration()
+        curr = self.counter
+        self.counter += 1
+        return curr
+
+# my_nums = iter(MyNumbers(5, 7))
+# next(my_nums) # 5
+# next(my_nums) # 6
+# next(my_nums) # 7
+# next(my_nums) # 6
+
+for i in MyNumbers(5, 7):
+    print(i)
+
 #
 #
 # myclass = MyNumbers()
@@ -59,5 +79,5 @@ class MyNumbers:
 
 myclass = MyNumbers(10)
 
-for x in myclass:
-    print(x)
+# for x in myclass:
+#     print(x)
