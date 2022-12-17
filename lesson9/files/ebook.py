@@ -12,7 +12,6 @@ class EBook:
         page_num = 1
         for i in range(0, len(all_words), words_num):
             page_words = all_words[i : i+words_num]
-            # 1: "ALice blblablalbal"
             self.pages[page_num] = " ".join(page_words)
             page_num += 1
 
