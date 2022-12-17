@@ -1,11 +1,3 @@
-# Science fiction books: $58
-# Comics: $32
-# History books: $24
-# There are discounts for clients who buy multiple books. The discounts work as follows:
-#     10% off science fiction books if a customer buys 3 or more science fiction books. The discount is on science fiction books only.
-# 2 +1 on history books
-# $20 off if the total price of the purchase exceeds $300
-
 sci_fi_books = int(input("Sci-fi: "))
 comics = int(input('comics: '))
 history = int(input('history: '))
