@@ -2,23 +2,49 @@
 def foo_squared(num):
     return num**2
 #
-my_list = [1, 3, 5, 6]
+# my_list = [1, 3, 5, 6]
 #
 
-ret_val = list(map(foo_squared, my_list))
+# ret_val = list(map(foo_squared, my_list))
 #
-print(ret_val)
+# print(ret_val)
 #
 
-print(list(map(str.lower, ['Apple', 'baNana', 'ANANAS'])))
+my_list = ['Apple is nice', 'baNana is yellow', 'ANANAS']
+# for i in my_list:
+    # do this on element
+    # do @2 on element
+
+def my_split(elem):
+    return elem.split(" ")
+
+def my_get_last(elem: list[str]):
+    return elem[-1]
+
+ret_val_from_map = map(my_get_last, map(my_split, map(str.lower, my_list)))
+# print(type(ret_val_from_map))
+# print(list(ret_val_from_map))
+# for i in ret_val_from_map:
+#     print(i)
+
+# print(list(ret_val_from_map))
+
+# list(my_list)
+
+
+
+# print(list(map(str.lower, ['Apple', 'baNana', 'ANANAS'])))
 
 
 # you can also pass multiple iterators to map
-# def foo_sum(num1, num2):
-#     return num1 + num2
+# def foo_sum(*args):
+#     return sum(args)
+#
 # my_tuple1, my_tuple2 = (1, 2, 3, 4), (10, 20, 30, 40)
-# ret_val = map(foo_sum, my_tuple1, my_tuple2)
+# ret_val = map(foo_sum, my_tuple1, my_tuple2, [100, 200, 300, 400])
 # print(list(ret_val))
+
+
 
 # we want any number of params
 # def s(*args):
@@ -38,3 +64,24 @@ print(list(map(str.lower, ['Apple', 'baNana', 'ANANAS'])))
 # for i in ['a', 'bb', 'ccc']:
 #     ret_val.append(i.upper())
 # print(list(ret_val))
+
+
+my_list = ['Apple is nice', 'baNana is yellow', 'ANANAS']
+
+def my_split(elem):
+    return elem.split(" ")
+
+my_split = lambda elem: elem.split(" ")
+
+def my_get_last(elem: list[str]):
+    return elem[-1]
+    # if 'a' in elem[-1]:
+    #     return elem[-1]
+    # else:
+    #     return elem[0]
+    # return elem[-1] if 'a' in elem[-1] else elem[0]
+
+# ret_val_from_map = map(my_get_last, map(my_split, map(str.lower, my_list)))
+ret_val_from_map = map(lambda x: x[-1],
+                       map(lambda x: x.split(" "),
+                           map(str.lower, my_list)))
