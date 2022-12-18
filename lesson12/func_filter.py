@@ -14,6 +14,8 @@ print(list(filter_obj))
 #         filtered.append(elem)
 # return filtered
 
+print("".join(filter(lambda c: c not in "aAeEiIoOuU", "hello")))
+
 
 
 # filter_obj = filter(str.islower, ["hello", 'hi', "WORLD", "yes"])
