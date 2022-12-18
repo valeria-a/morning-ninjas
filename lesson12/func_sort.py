@@ -114,7 +114,7 @@
 # sorted(words, key=my_best_compare)
 import datetime
 
-d1 = "4h 56m"
+d1 = "1h 5m"
 tr1: datetime.timedelta = datetime.datetime.strptime(d1, "%Hh %Mm") - \
       datetime.datetime(year=1900, month=1, day=1)
 print(tr1.total_seconds() // 60)
