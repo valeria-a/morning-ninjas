@@ -12,10 +12,6 @@ class RavKav:
         self.__holder_id = holder_id
         self.__holder_name = holder_name
         self.__balance = 0
-        # self.__log = {
-        #     'log_dates': {},
-        #     'log_types': {}
-        # }
         self.__log_date = {}
         self.__log_types = {}
 
@@ -37,12 +33,6 @@ class RavKav:
 
     def ride(self, km, date: datetime.date):
         pass
-
-
-# # d1 = datetime.datetime.now()
-# d2 = input("Insert a date dd-mm-yyyy: ")
-# date2 = datetime.datetime.strptime(d2, "%d-%m-%Y")
-# print(date2.date())
 
 
 
