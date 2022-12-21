@@ -14,17 +14,17 @@ import re
 
 
 
-# user_email = input("Insert email: ")
+user_email = input("Insert email: ")
 
 # letters (a-z) @ letters (a-z) . letters (a-z)
 
-# pattern = "[a-z]+@[a-z]+\.[a-z]+"
+pattern = "[a-z]+@[a-z]+\.[a-z]+"
 #
-# result = re.match(pattern, user_email)
+result = re.match(pattern, user_email)
 #
-# type(result)
+type(result)
 #
-# print(result)
+print(result)
 #
 # email = "valeria@gm7ail.com))))"
 #

@@ -58,9 +58,12 @@ if __name__ == '__main__':
     else:
         print(f"There is an error: {response.status_code}")
 
-# {"country": [{"country_id": "GH", "probability": 0.224}, {"country_id": "PH", "probability": 0.084},
-#              {"country_id": "NG", "probability": 0.073}, {"country_id": "US", "probability": 0.061},
-#              {"country_id": "NE", "probability": 0.034}], "name": "nathaniel"}
+    countries = {"country": [{"country_id": "GH", "probability": 0.224}, {"country_id": "PH", "probability": 0.084},
+                 {"country_id": "NG", "probability": 0.073}, {"country_id": "US", "probability": 0.061},
+                 {"country_id": "NE", "probability": 0.034}], "name": "nathaniel"}
+
+    mx_prob_country = sorted(countries['country'], key=lambda c: c['probability'], reverse=True)[0]
+    print(mx_prob_country)
 
 
 # with path param
