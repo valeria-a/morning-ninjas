@@ -8,7 +8,7 @@ def create_files(base_prefix: str, num: int):
     if not os.path.exists(base_prefix):
         os.makedirs(base_prefix)
 
-    executor = ThreadPoolExecutor(max_workers=16)
+    executor = ThreadPoolExecutor(max_workers=36)
     futures = []
 
     for i in range(1, num+1):
@@ -20,18 +20,17 @@ def create_files(base_prefix: str, num: int):
             lines.append(f"{i} in power {j} is: {i ** j}")
         # print(f"Finished calculating for {i}")
 
-        futures.append(executor.submit(create_single_file, file_path, i, lines))  # does not block
+        future = executor.submit(create_single_file, file_path, i, lines) # does not block
+        futures.append(future)
 
 
-
-    done, not_done = wait(futures, return_when=concurrent.futures.ALL_COMPLETED)
+    done, not_done = wait(futures,
+                          return_when=concurrent.futures.ALL_COMPLETED,
+                          timeout=5)
     print(f"done: {len(done)}")
     print(f"not done: {len(not_done)}")
 
     # executor.shutdown(wait=True) # or with context maanger
-
-
-
 
 
 def create_single_file(file_path, i, lines):

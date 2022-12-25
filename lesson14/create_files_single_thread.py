@@ -13,10 +13,11 @@ def create_files(base_prefix: str, num: int):
         # print(f"Started calculating for {i}")
         lines = []
         for j in range(100):
-            lines.append(f"{i} in power {j} is: {i ** j}")
+            lines.append(f"{i} in power {j} is: {i ** j}\n")
         # print(f"Finished calculating for {i}")
 
         file_path = os.path.join(base_prefix, f"factorial_{i}.txt")
+
 
         # print(f"Started writing for {i}")
         with open(file_path, 'w') as f:
@@ -26,6 +27,6 @@ def create_files(base_prefix: str, num: int):
 
 if __name__ == '__main__':
     start = datetime.datetime.utcnow()
-    create_files("/users/valeria/temp/threads_ex", 700)
+    create_files("/users/valeria/temp/threads_ex", 400)
     end = datetime.datetime.utcnow()
     print(f"Time took: {(end-start).total_seconds()}s")

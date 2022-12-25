@@ -1,10 +1,7 @@
 import datetime
 import os
 import threading
-from math import factorial
 
-with open('AAPL.csv', 'r') as f:
-    csv_text = f.read()
 
 
 def create_files(base_prefix: str, num: int):
@@ -30,7 +27,7 @@ def create_files(base_prefix: str, num: int):
     #     t.start()
 
     for t in threads:
-        t.join() # blocks
+        t.join(timeout=2) # blocks
 
 
 def create_single_file(file_path, i, lines):
@@ -42,6 +39,6 @@ def create_single_file(file_path, i, lines):
 
 if __name__ == '__main__':
     start = datetime.datetime.utcnow()
-    create_files("/users/valeria/temp/threads_ex", 700) # 36 | 300 | 700 - no improvemetn
+    create_files("/users/valeria/temp/threads_ex", 400) # 36 | 300 | 700 - no improvemetn
     end = datetime.datetime.utcnow()
     print(f"Time took: {(end-start).total_seconds()}s")
