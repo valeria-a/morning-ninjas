@@ -1,4 +1,6 @@
 import multiprocessing
+from concurrent.futures import ProcessPoolExecutor
+
 import time
 
 COUNT = 100_000_000
@@ -23,3 +25,5 @@ if __name__ == '__main__':
 
     end = time.time()
     print('Time taken in seconds -', end - start)
+
+    executor = ProcessPoolExecutor()

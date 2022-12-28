@@ -6,8 +6,10 @@ def countdown(n_from, n_to):
     while n_from > n_to:
         n_from -= 1
 
-start = time.time()
-countdown(COUNT, 0)
-end = time.time()
 
-print('Time taken in seconds -', end - start)
+if __name__ == '__main__':
+    start = time.time()
+    countdown(COUNT, 0)
+    end = time.time()
+
+    print('Time taken in seconds -', end - start)

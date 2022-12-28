@@ -1,23 +1,25 @@
 import threading
 
-lock1 = threading.Lock()
+# lock1 = threading.Lock()
+#
+# counter = 0
+#
+# def a():
+#     lock1.acquire()
+#     print("Inside critical section of a")
+#     c()
+#     lock1.release()
+#
+# def c():
+#     lock1.acquire()
+#     print("Inside critical section of c")
+#     lock1.release()
+#
+#
+# # what will be the outout?
+# a()
+#a
 
-counter = 0
-
-def a():
-    lock1.acquire()
-    print("Inside critical section of a")
-    c()
-    lock1.release()
-
-def c():
-    lock1.acquire()
-    print("Inside critical section of c")
-    lock1.release()
-
-
-# what will be the outout?
-a()
 
 ######
 
