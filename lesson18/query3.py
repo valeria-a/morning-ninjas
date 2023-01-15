@@ -32,13 +32,34 @@ def demo_query():
     conn = psycopg2.connect(**params)
 
     # create a cursor
-    cur = conn.cursor()
+    with conn.cursor() as cur:
 
-    # execute a statement
-    cur.execute('SELECT * FROM customers')
-    # using_fetch_one(cur)
-    # using_fetch_many(cur)
-    # using_fetch_all(cur)
+        # execute a statement
+        cur.execute('SELECT count(*) FROM customers')
+        print(cur.rowcount)
+        print(cur.arraysize)
+        # cur.
+        result = cur.fetchmany(2)
+        print(result)
+
+        # result = cur.fetchone()
+        # print(result)
+        #
+        # result = cur.fetchone()
+        # print(result)
+        #
+        # result = cur.fetchone()
+        # print(result)
+        #
+        # result = cur.fetchone()
+        # print(result)
+        #
+        # result = cur.fetchone()
+        # print(result)
+
+        # using_fetch_one(cur)
+        # using_fetch_many(cur)
+        # using_fetch_all(cur)
 
     conn.close()
 

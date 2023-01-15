@@ -3,7 +3,7 @@ import psycopg2
 
 from lesson18.config import get_config
 
-def connect(self):
+def connect():
     """ Connect to the PostgreSQL database server """
     conn = None
     try:
@@ -13,13 +13,16 @@ def connect(self):
         # connect to the PostgreSQL server
         print('Connecting to the PostgreSQL database...')
         conn = psycopg2.connect(**params)
+        # conn = psycopg2.connect(host='localhost', username='postgres', ...)
 
         # create a cursor
         cur = conn.cursor()
+        # cur.close()
 
         # execute a statement
         print('PostgreSQL database version:')
         cur.execute('SELECT version()')
+        # cur.execute('SELECT * from bbb')
 
         # display the PostgreSQL database server version
         db_version = cur.fetchone()
