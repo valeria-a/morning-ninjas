@@ -81,3 +81,11 @@ myclass = MyNumbers(10)
 
 # for x in myclass:
 #     print(x)
+
+
+
+
+# map / filter objects are also iterables
+
+# fruits = ['apple', 'ananas', 'mango']
+# my_map = map(str.upper, fruits)
