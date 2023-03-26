@@ -3,20 +3,20 @@ def factorial(n):
     for i in range(1, n+1):
         res *= i
     return res
+#
+#
+# def factorial_while(n):
+#     res = 1
+#     while n >= 1:
+#         res = n * res
+#         n = n-1
+#     return res
 
 
-def factorial_while(n):
-    res = 1
-    while n >= 1:
-        res = n * res
-        n = n-1
-    return res
-
-
-def rec_factorial(n):
-    if n == 1:
-        return n
-    return n * rec_factorial(n-1)
+# def factorial(n):
+#     if n == 1:
+#         return 1
+#     return n * factorial(n-1)
 
 
 def print_numbers_desc(n):
@@ -43,6 +43,6 @@ def fib(n):
 
 if __name__ == '__main__':
     # print(fib(10))
-    # print_numbers_rec(10)
-    # print(rec_factorial(3))
-    pass
+    print_numbers_rec(100)
+    # print(factorial(1500))
+    # pass
