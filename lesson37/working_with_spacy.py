@@ -20,13 +20,21 @@ Apple is looking at buying U.K. startup for $1 billion
 
 
 if __name__ == '__main__':
-    nlp = spacy.load("en_core_web_sm")
-    doc = nlp(TEXT3)
+    nlp = spacy.load("en_core_web_trf")
+    doc = nlp(TEXT1)
 
+    # for i, sentence in enumerate(doc.sents):
+    #     print(f"Sentence {i}: {sentence}")
 
-    for i, sentence in enumerate(doc.sents):
-        print(f"Sentence {i}: {sentence}")
+    # for token in doc:
+    #     print(token.text, token.pos_)
+
+    for ent in doc.ents:
+        print(ent.text, ent.label_)
+
+    # for i, sentence in enumerate(doc.sents):
+    #     print(f"Sentence {i}: {sentence}")
         # for token in sentence:
         #     print(token.text, token.pos_)
-        for ent in sentence.ents:
-            print(ent.text, ent.label_)
+        # for ent in sentence.ents:
+        #     print(ent.text, ent.label_)
