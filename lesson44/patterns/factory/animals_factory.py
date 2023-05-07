@@ -1,4 +1,8 @@
 # Implementing the Animal classes
+from textfiles.csv_file import CsvFile
+from textfiles.file_factory import TextFile
+from textfiles.json_file import JsonFile
+
 
 # Subject
 class Animal:
@@ -31,3 +35,9 @@ class AnimalFactory:
             return Fish()
         else:
             return None
+
+
+
+if __name__ == '__main__':
+    TextFile.make_file_instance("csv")
+    CsvFile("gsjhdf")

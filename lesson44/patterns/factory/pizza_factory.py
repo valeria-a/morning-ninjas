@@ -1,5 +1,7 @@
 from abc import ABC, abstractmethod
 
+import textfiles
+
 # The Factory design pattern is a popular design pattern because
 # it provides a way to create objects without specifying their exact class.
 # This decouples the creation of objects from their use, making the code more flexible and easier to maintain.
