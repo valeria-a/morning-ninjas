@@ -1,4 +1,6 @@
 # decouple the subject and observer objects, allowing for better code maintainability and flexibility.
+from abc import ABC, abstractmethod
+
 
 class Subject:
     def __init__(self):
@@ -19,9 +21,10 @@ class Subject:
             observer.update(**kwargs)
 
 
-class Observer:
+class Observer(ABC):
+    @abstractmethod
     def update(self, *args, **kwargs):
-        raise NotImplementedError
+        raise NotImplementedError()
 
 
 class ConcreteObserver(Observer):

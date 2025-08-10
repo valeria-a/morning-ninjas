@@ -55,3 +55,4 @@ if __name__ == '__main__':
     print(car_mazda.get_color())
     # print(car_mazda._fuel_consumption)
     # print(car_mazda.__km)
+

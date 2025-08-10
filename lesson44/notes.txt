@@ -1,0 +1,8 @@
+Bubble sort:
+https://www.hackerearth.com/practice/algorithms/sorting/bubble-sort/visualize/
+(n-1) + (n-2) + ... + 2 + 1 = n(n-1)/2 => n^2
+
+Selection sort
+
+Quick sort
+

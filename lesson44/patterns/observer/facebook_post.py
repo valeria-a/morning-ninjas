@@ -6,10 +6,16 @@ class FacebookPost(observer.Subject):
         super().__init__()
         self.post_id = post_id
         self.content = content
+        self.notify(post=self)
 
     def edit_post(self, new_content):
         self.content = new_content
         self.notify(post=self)
+
+    def edit_privacy(self, new_privacy):
+        # do some stuff
+        # don't call notify
+        pass
 
 
 class UserNotification(observer.Observer):
@@ -47,5 +53,5 @@ if __name__ == "__main__":
 
     post.detach(user_notifier_1)
     post.detach(hashtag_notifier)
-
+    #
     post.edit_post("This is a second update to the post.")

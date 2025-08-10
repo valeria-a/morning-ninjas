@@ -25,6 +25,8 @@ class Observer:
 class EmailNotification(Observer):
     def update(self, message):
         print(f"Sending email notification: {message}")
+        # iterate over your users and send email to every user subscribed for updates
+        # send_emai()
 
 
 class TextNotification(Observer):
